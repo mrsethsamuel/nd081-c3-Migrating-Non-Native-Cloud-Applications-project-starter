@@ -63,9 +63,14 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* |   Single Server  |   US$162.194    |
+| *Azure App Service*   |    Premium     |        US$83.95      |
+| Azure Functions                   |         |      US$310.542        |
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+
+Azure Web Apps is a fully managed service that enables developers and administrators to create and deploy enterprise-grade web applications. It enables Azure developers to quickly create web applications by providing powerful capabilities such as built-in development operations, continuous integration with Visual Studio Online and GitHub, staging and production support, and automatic patching. Additionally, it supports integration with on-premises and other cloud-based systems.
+
+While, 
+
+Azure Functions is a serverless computing solution that enables you to write less code, manage fewer resources, and save money. Rather than worrying about the deployment and maintenance of servers, the cloud infrastructure provides all the resources necessary to keep your applications running.
