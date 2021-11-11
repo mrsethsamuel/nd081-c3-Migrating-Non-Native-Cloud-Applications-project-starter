@@ -72,15 +72,15 @@ def notification():
             # Call servicebus queue_client to enqueue notification ID
             queue_client.send(msg)    
 
-            # attendees = Attendee.query.all()
+            attendees = Attendee.query.all()
 
-            # for attendee in attendees:
-            #     subject = '{}: {}'.format(attendee.first_name, notification.subject)
-            #     send_email(attendee.email, subject, notification.message)
+            for attendee in attendees:
+                 subject = '{}: {}'.format(attendee.first_name, notification.subject)
+                 send_email(attendee.email, subject, notification.message)
 
-            # notification.completed_date = datetime.utcnow()
-            # notification.status = 'Notified {} attendees'.format(len(attendees))
-            # db.session.commit()
+                 notification.completed_date = datetime.utcnow()
+                 notification.status = 'Notified {} attendees'.format(len(attendees))
+                 db.session.commit()
 
             return redirect('/Notifications')
         except Exception as e:
@@ -89,13 +89,13 @@ def notification():
     else:
         return render_template('notification.html')
 
-# def send_email(email, subject, body):
-#     if not app.config.get('SENDGRID_API_KEY'):
-#         message = Mail(
-#             from_email=app.config.get('ADMIN_EMAIL_ADDRESS'),
-#             to_emails=email,
-#             subject=subject,
-#             plain_text_content=body)
+def send_email(email, subject, body):
+     if not app.config.get('SENDGRID_API_KEY'):
+         message = Mail(
+             from_email=app.config.get('ADMIN_EMAIL_ADDRESS'),
+             to_emails=email,
+             subject=subject,
+             plain_text_content=body)
 
-#         sg = SendGridAPIClient(app.config.get('SENDGRID_API_KEY'))
-#         sg.send(message)
+         sg = SendGridAPIClient(app.config.get('SENDGRID_API_KEY'))
+         sg.send(message)
