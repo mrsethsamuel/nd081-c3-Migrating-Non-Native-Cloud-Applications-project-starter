@@ -13,7 +13,7 @@ def main(msg: func.ServiceBusMessage):
 
     # Get connection to database
     conn = psycopg2.connect(dbname="techconf", 
-                            user="techadmin@techconfdbserver", 
+                            user="techconfadmin@techconfdbserver", 
                             password="SamB0os123456", 
                             host="techconfdbserver.postgres.database.azure.com")
     cur = conn.cursor()
