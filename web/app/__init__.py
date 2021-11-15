@@ -12,6 +12,9 @@ app.secret_key = app.config.get('SECRET_KEY')
 queue_client = QueueClient.from_connection_string(app.config.get('SERVICE_BUS_CONNECTION_STRING'),
                                                  app.config.get('SERVICE_BUS_QUEUE_NAME'))
 
+conn_str = app.config.get('SERVICE_BUS_CONNECTION_STRING')
+servicebus_qname = app.config.get('SERVICE_BUS_QUEUE_NAME')
+
 db = SQLAlchemy(app)
 
 from . import routes

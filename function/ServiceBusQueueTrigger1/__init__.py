@@ -35,7 +35,7 @@ def main(msg: func.ServiceBusMessage):
                 subject= subject,
                 plain_text_content= "Hi {}, \n {}".format(first_name, body))
             try:
-                SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
+                SENDGRID_API_KEY = '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'
                 sg = SendGridAPIClient(SENDGRID_API_KEY)
                 response = sg.send(mail)
             except Exception as e:
@@ -43,8 +43,9 @@ def main(msg: func.ServiceBusMessage):
         status = "Notified {} attendees".format(len(attendees))
         # Update the notification table by setting the completed date and updating the status with the total number of attendees notified
         cur.execute("UPDATE notification SET status = '{}', completed_date = '{}' WHERE id = {};".format(status, datetime.utcnow(), notification_id))
-        # cur.execute("INSERT INTO notification(status, message, completed_date, subject) VALUES ('{}', '{}', '{}','{}');".format(status, body, datetime.utcnow(), subject))
+
         conn.commit()
+
     except (Exception, psycopg2.DatabaseError) as error:
         logging.error(error)
         conn.rollback()       

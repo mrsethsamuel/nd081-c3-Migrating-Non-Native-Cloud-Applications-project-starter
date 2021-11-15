@@ -7,6 +7,7 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 import logging
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -71,18 +72,28 @@ def notification():
             ## TODO: Refactor This logic into an Azure Function
             ## Code below will be replaced by a message queue
             #################################################
-            
-            msg = Message(notification.id)
+            # attendees = Attendee.query.all()
 
+            # for attendee in attendees:
+            #     subject = '{}: {}'.format(attendee.first_name, notification.subject)
+            #     send_email(attendee.email, subject, notification.message)
+
+            # notification.completed_date = datetime.utcnow()
+            # notification.status = 'Notified {} attendees'.format(len(attendees))
+            # db.session.commit()
             # TODO Call servicebus queue_client to enqueue notification ID
+
+            msg = Message('{}'.format(notification.id))
             queue_client.send(msg)
+
+
             #################################################
             ## END of TODO
             #################################################
 
             return redirect('/Notifications')
-        except :
-            logging.error('log unable to save notification')
+        except Exception as e:
+            logging.error(f"log unable to save notification: {e}")
 
     else:
         return render_template('notification.html')
