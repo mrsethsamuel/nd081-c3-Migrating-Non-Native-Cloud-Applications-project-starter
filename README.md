@@ -80,15 +80,16 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 Using the Web App service for deployment eliminates several costs:
 
-Management of costs.
-Infrastructure management is simplified.
-Scaling options have been improved for both vertical and horizontal requirements.
-This deployment enabled the creation of a decoupled application through the use of a microservices architecture.
+- Management of costs.
+- Infrastructure management is simplified.
+- Scaling options have been improved for both vertical and horizontal requirements.
+- This deployment enabled the creation of a decoupled application through the use of a microservices architecture.
+
 The following advantages resulted from the use of Azure Functions:
 
-Design of microservices.
-Management of costs.
-Infrastructure management is simplified.
-Capability for rapid deployment.
-Modification of the endpoint options is simple.
-Cost savings across the board, easy extensibility of the product design, and simplified management of the deployment process.
+- Design of microservices.
+- Management of costs.
+- Infrastructure management is simplified.
+- Capability for rapid deployment.
+- Modification of the endpoint options is simple.
+- Cost savings across the board, easy extensibility of the product design, and simplified management of the deployment process.
