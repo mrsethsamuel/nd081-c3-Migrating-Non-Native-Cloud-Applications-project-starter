@@ -63,14 +63,32 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |   Single Server  |   US$162.194    |
-| *Azure App Service*   |    Premium     |        US$83.95      |
-| Azure Functions                   |         |      US$310.542        |
+| *Azure Postgres Database* |   Single Server  |   US$162.19    |
+| *Azure App Service*   |    Basic Tier; 1 B1      |        US$13.14      |
+| Azure Functions                   |         |      US$0.00        |
+| Sendgrid                  |  Variable (100 free messages/month)       |      US$0.00        |
+| Storage Account                   |         |      US$21.95        |
+| Service Bus                  | Basic tier: 0 million messaging operations/mo        |      US$0.00        |
+| Estimated monthly cost                   |         |      US$197.28        |
+
+
+
+
+
 
 ## Architecture Explanation
 
-Azure Web Apps is a fully managed service that enables developers and administrators to create and deploy enterprise-grade web applications. It enables Azure developers to quickly create web applications by providing powerful capabilities such as built-in development operations, continuous integration with Visual Studio Online and GitHub, staging and production support, and automatic patching. Additionally, it supports integration with on-premises and other cloud-based systems.
+Using the Web App service for deployment eliminates several costs:
 
-While, 
+Management of costs.
+Infrastructure management is simplified.
+Scaling options have been improved for both vertical and horizontal requirements.
+This deployment enabled the creation of a decoupled application through the use of a microservices architecture.
+The following advantages resulted from the use of Azure Functions:
 
-Azure Functions is a serverless computing solution that enables you to write less code, manage fewer resources, and save money. Rather than worrying about the deployment and maintenance of servers, the cloud infrastructure provides all the resources necessary to keep your applications running.
+Design of microservices.
+Management of costs.
+Infrastructure management is simplified.
+Capability for rapid deployment.
+Modification of the endpoint options is simple.
+Cost savings across the board, easy extensibility of the product design, and simplified management of the deployment process.
